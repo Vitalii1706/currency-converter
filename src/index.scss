@@ -48,7 +48,6 @@ body {
     margin: 5px;
   }
   &__left, &__right  {
-
     border: none;
     border-bottom: 2px solid gray;
     background-color: rgb(250, 255, 253);
@@ -56,6 +55,7 @@ body {
     display: inline-block;
     align-items: center;
     justify-content: center;
+    
   }
   &__button-reset {
     background-color: rgb(249, 253, 211);
@@ -66,6 +66,11 @@ body {
   
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 
 

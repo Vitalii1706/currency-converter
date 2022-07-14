@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Currency = ({ USD, EUR, PLN, GBP, CHF }) => {
   const [value, setValue] = useState({ start: 1, end: 1, selectStart: 1, selectEnd: 1 });
@@ -18,7 +18,6 @@ const Currency = ({ USD, EUR, PLN, GBP, CHF }) => {
       selectStart: value.selectStart,
       selectEnd: e.target.value,
     });
-    console.log(value.start, e.target.value, value.selectEnd);
   };
 
   const handleChangeStart = e => {
@@ -38,10 +37,6 @@ const Currency = ({ USD, EUR, PLN, GBP, CHF }) => {
     });
   };
 
-  const selectReset = e => {
-    //
-  };
-
   return (
     <div className="currency-converter">
       <p className="currency-converter__p">КОНВЕРТЕР ВАЛЮТ</p>
@@ -49,7 +44,7 @@ const Currency = ({ USD, EUR, PLN, GBP, CHF }) => {
         <input
           id="cc-l"
           className="currency-converter__left"
-          type="text"
+          type="number"
           onChange={handleChangeStart}
           value={value.start}
         />
@@ -64,7 +59,7 @@ const Currency = ({ USD, EUR, PLN, GBP, CHF }) => {
         <input
           id="cc-r"
           className="currency-converter__right"
-          type="text"
+          type="number"
           onChange={handleChangeEnd}
           value={value.end}
         />
@@ -76,9 +71,6 @@ const Currency = ({ USD, EUR, PLN, GBP, CHF }) => {
           <option value={GBP}>GBP</option>
           <option value={CHF}>CHF</option>
         </select>
-        <button className="currency-converter__button-reset" onClick={selectReset}>
-          Reset
-        </button>
       </div>
     </div>
   );
